@@ -126,6 +126,8 @@ function fizzBuzz(numero) {
     return "fizz"
   } else if ((numero % 5) === 0){
     return "buzz"
+  } else{
+    return numero
   }
 }
 
@@ -135,17 +137,18 @@ function operadoresLogicos(num1, num2, num3) {
   //Si alguno de los tres números es negativo, retornar ---> "Hay negativos"
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
-  //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
-  if ((num1 > num2 && num1 > num3 && num1 > 0 && num2 > 0 && num3 > 0)){
-    return "Numero 1 es mayor y positivo";
-  } if (num1 < 0 || num2 < 0 || num3 < 0){
+  //Si no se cumplen ninguna de las condiciones anteriores, retornar false.
+  if (num1 < 0 || num2 < 0 || num3 < 0){
     return "Hay negativos";
-  } if (num3 > num1 && num3 > num2){
-    return num3++;
-  } if (num1 === 0 || num2 === 0 || num3 === 0){
+  } if (num1 == 0 || num2 == 0 || num3 == 0){
     return "Error";
+  } else if (num1 > num2 && num1 > num3 && num1 > 0){
+      return "Número 1 es mayor y positivo";
+  } else if (num3 > num1 && num3 > num2){
+    let aumento = ++num3;
+    return aumento;
   } else{
-    return false;
+    return false
   }
 }
 
@@ -180,7 +183,9 @@ function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
   //Escribe tu código aquí   
-  
+  var tabla = [0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60];
+
+  return tabla;
 }
 
 function tieneTresDigitos(numero){
@@ -198,12 +203,15 @@ function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
-  var freno = 0
-  while(freno < 8){
-    freno ++;
-    cantidad + 5;
-  }
-}
+  var Calculo = numero;
+  var Freno = 0;
+  do{
+    Freno = Freno + 1;
+    Calculo = Calculo + 5;
+  } while (Freno < 8);
+
+  return Calculo;
+} 
 
 
 // No modificar nada debajo de esta línea
